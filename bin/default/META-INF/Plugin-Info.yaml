@@ -1,0 +1,7 @@
+Custom-Protocol: VisaCustomSFTP
+SPI-Version:
+  '1.1':
+    Custom-Site: com.axway.st.plugins.site.visa.sftp.CustomSFTPSite
+    Protocol-Label: Visa Custom SFTP Transfer Site
+    Custom-UI: com/axway/st/plugins/site/visa/sftp/html/CustomSFTPSite.html
+    Class-Path: VisaCustomSFTP/libs/jsch-0.1.55.jar VisaCustomSFTP/libs/gson-2.2.2.jar

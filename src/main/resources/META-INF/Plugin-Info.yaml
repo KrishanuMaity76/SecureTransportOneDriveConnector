@@ -1,0 +1,7 @@
+Custom-Protocol: MicrosoftOneDrive
+SPI-Version:
+  '1.1':
+    Custom-Site: com.axway.st.plugins.site.onedrive.OneDriveSite
+    Protocol-Label: Microsoft OneDrive
+    Custom-UI: com/axway/st/plugins/site/onedrive/html/OneDriveSite.html
+    Class-Path: MicrosoftOneDrive/libs/jsch-0.1.55.jar MicrosoftOneDrive/libs/commons-net-3.6.jar MicrosoftOneDrive/libs/json-20140107.jar MicrosoftOneDrive/libs/okhttp-3.12.1.jar

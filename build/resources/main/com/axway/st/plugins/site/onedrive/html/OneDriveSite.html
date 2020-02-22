@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+    <title>OneDrive</title>
+</head>
+<body>
+      <script src="/coreadmin/servlet/pluginContent/com/axway/st/plugins/site/onedrive/js/OneDriveSite.js?pluginName=MicrosoftOneDrive" />
+
+    <table border="0" cellpadding="1" cellspacing="0">
+        <tr>
+            <td colspan="3"><b>Site Settings:</b></td>
+        </tr>
+
+        <tr>
+            <td style="padding-left: 50px;" nowrap="nowrap" width="100">App Key*:</td>
+            <td colspan="2">
+                <fieldset>
+                    <div>
+                        <label>
+                            <input type="text" size="40" id="onedrive_appId" name="onedrive_appId" value="" /> 
+                            <div class="contextual-help">
+						        <a data-content-id="onedrive_appId-help"
+							       title="Open contextual help" class="modern-iconhelp" tabIndex="-1" href="#">?</a>
+						        <div class="help-dialog hidden">
+							        <div class="dialog-header">
+								        <span class="hidden" /><a class="btn-close" href="#">x</a>
+							        </div>
+							        <div class="dialog-content" data-for="onedrive_appId" />
+						        </div>
+				           	</div>
+					        <div id="onedrive_appId-help" class="hidden">
+						       <p>The OneDrive consumer key of the application.</p>                            
+						    </div>
+                        </label>
+                    </div>
+                </fieldset>      
+            </td>
+        </tr>  
+        <tr>
+            <td style="padding-left: 50px;" nowrap="nowrap" width="100">App Secret*:</td>
+            <td colspan="2">
+                <fieldset>
+                    <div>
+                        <label>
+                            <input type="password" size="40" id="onedrive_secret" name="onedrive_secret" value="" /> 
+                            <div class="contextual-help">
+						        <a data-content-id="onedrive_secret-help"
+							       title="Open contextual help" class="modern-iconhelp" tabIndex="-1" href="#">?</a>
+						        <div class="help-dialog hidden">
+							        <div class="dialog-header">
+								        <span class="hidden" /><a class="btn-close" href="#">x</a>
+							        </div>
+							        <div class="dialog-content" data-for="onedrive_secret" />
+						        </div>
+				           	</div>
+					        <div id="onedrive_secret-help" class="hidden">
+						       <p>The OneDrive consumer secret key of the application.</p>                            
+						    </div>
+                        </label>
+                    </div>
+                </fieldset>      
+            </td>
+        </tr>	
+		<tr>
+            <td style="padding-left: 50px;" nowrap="nowrap" width="100">Tenant Id*:</td>
+            <td colspan="2">
+                <fieldset>
+                    <div>
+                        <label>
+                            <input type="text" size="40" id="onedrive_tenantId" name="onedrive_tenantId" value="" /> 
+                            <div class="contextual-help">
+						        <a data-content-id="onedrive_tenantId-help"
+							       title="Open contextual help" class="modern-iconhelp" tabIndex="-1" href="#">?</a>
+						        <div class="help-dialog hidden">
+							        <div class="dialog-header">
+								        <span class="hidden" /><a class="btn-close" href="#">x</a>
+							        </div>
+							        <div class="dialog-content" data-for="onedrive_tenantId" />
+						        </div>
+				           	</div>
+					        <div id="onedrive_tenantId-help" class="hidden">
+						       <p>The OneDrive consumer tenant id of the application.</p>                            
+						    </div>
+                        </label>
+                    </div>
+                </fieldset>      
+            </td>
+        </tr>	
+		<tr>
+        <td style="padding-left: 10px;" nowrap="nowrap">Network Zone*:</td>
+            <td>
+                <select id="onedrive_networkZone" name="onedrive_networkZone" />
+            </td>
+        </tr>
+          
+	
+        <tr>
+            <td colspan="3"><b>Transfer Settings:</b></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <fieldset><legend>Download Settings</legend>
+                    <table border="0" cellpadding="1" cellspacing="0">
+                        <tr>
+                            <td style="padding-left: 50px;" nowrap="nowrap">Download folder:</td>
+                            <td colspan="2">
+                                <fieldset>
+                                    <table border="0" cellpadding="1" cellspacing="0">
+                                        <tr>
+                                            <td>
+                                                <label>
+                                                    <input type="checkbox" id="onedriveDownloadExpression" name="onedriveDownloadExpression" value=""/>                                               
+                                                    <span>Advanced Expression </span>                                              
+                                                    <div class="contextual-help">
+						                                <a data-content-id="onedriveDownloadExpression-help"
+							                               title="Open contextual help" class="modern-iconhelp" tabIndex="-1" href="#">?</a>
+						                                <div class="help-dialog hidden">
+							                                <div class="dialog-header">
+								                                <span class="hidden" /><a class="btn-close" href="#">x</a>
+							                                </div>
+							                                <div class="dialog-content" data-for="deleteFileFromFolder" />
+						                                </div>
+				           	                        </div>
+					                                <div id="onedriveDownloadExpression-help" class="hidden">
+						                                <p>When checked the folder is evaluated using expression language.</p>
+                                                        <ul>
+                                                            <li>Appending dates.</li>
+                                                        </ul>
+                                                        <p>The folder will be evaluated using the current date when the transfer site is being executed.
+                                                           For example 'folder_20160601'.</p>   
+                                                        <p><code>folder_${date("yyyyMMdd")}</code></p>
+                                                        <a href="#p" class="use-example" data-for="onedriveDownloadExpression">Use example</a><br/>
+						                            </div>
+												</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" size="40" id="onedrive_downloadFolder" name="onedrive_downloadFolder" value=""/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+				            <td style="padding-left: 50px;" nowrap="nowrap">Download File Pattern Type:</td>
+				            <td colspan="2">
+				                <label><input type="radio" name="onedriveDownloadType" id="onedriveDownloadTypeRegex" value="regex" />Regular Expression</label>
+				                <label><input type="radio" name="onedriveDownloadType" id="onedriveDownloadTypeGlob" value="glob" />File Globbing</label>
+				                <div id="deleteFilePatternDesc" style="vertical-align: middle" class="contextual-help">
+				                    <a data-content-id="deleteFilePatternDiv"
+				                        title="Open contextual help" tabIndex="-1"
+				                        class="modern-iconhelp" href="#"><span>?</span></a>
+				                    <div class="help-dialog hidden">
+				                        <div class="dialog-header" style="height: 1px;">
+				                            <a href="#p" class="btn-close">x</a>
+				                        </div>
+				                        <div class="dialog-content"></div>
+				                    </div>
+				                </div>               
+				                <div id="deleteFilePatternDiv" class="hidden">
+				                    <p>
+				                        Pattern matching expression supports <code>"glob"</code> and <code>"regexp"</code> syntaxes.
+				                    </p>
+				                    <p>
+				                        When the pattern type is "<code>File Globbing</code>" then the <code>String</code> representation of the filename is matched using a limited pattern language that resembles regular expressions but with a simpler syntax. For example:
+				                    </p>
+				                    <ul>
+				                        <li>Matches files ending in <code>.xml</code>
+				                            <p class="example">*.xml</p>
+				                            <a href="#p" class="use-example" data-for="deleteFilePattern" onClick="document.getElementById('onedriveDownloadTypeGlob').checked = true;">Use example</a>
+				                        </li>
+				                        <li>Matches file names starting with <code>foo.</code> that have a double character extension
+				                            <p class="example">foo.??</p>
+				                            <a href="#p" class="use-example" data-for="deleteFilePattern" onClick="document.getElementById('onedriveDownloadTypeGlob').checked = true;">Use example</a>
+				                        </li>
+				                        <li>Matches file names ending in .1,.2,.3,.4,.5,.6,.7,.8,.9,.0
+				                            <p class="example">*.[0-9]</p>
+				                            <a href="#p" class="use-example" data-for="deleteFilePattern" onClick="document.getElementById('onedriveDownloadTypeGlob').checked = true;">Use example</a>
+				                        </li>
+				                        <li>Matches file names having a single character extension different from 1,2,3,4,5,6,7,8,9,0
+				                            <p class="example">*.[!0-9]</p>
+				                            <a href="#p" class="use-example" data-for="deleteFilePattern" onClick="document.getElementById('onedriveDownloadTypeGlob').checked = true;">Use example</a>
+				                        </li>
+				                    </ul>
+				                    <p>
+				                        When the syntax is "<code>Regular Expression</code>" then the <code>String</code> representation of the filename is matched against a Perl5.003 regular expressions. Perl5 extended regular expressions are also supported. For example:
+				                        <ul>
+				                            <li>Matches files ending in <code>.xml</code> or <code>.txt</code>
+				                                <p class="example">.*\.(xml|txt)</p>
+				                                <a href="#p" class="use-example" data-for="deleteFilePattern" onClick="document.getElementById('onedriveDownloadTypeRegex').checked = true;">Use example</a>
+				                            </li>
+				                            <li>Case insensitive match of <code>data.xml</code> file
+				                                <p class="example">(?i)data\.xml</p>
+				                                <a href="#p" class="use-example" data-for="deleteFilePattern" onClick="document.getElementById('onedriveDownloadTypeRegex').checked = true;">Use example</a>
+				                            </li>
+				                        </ul>
+				                    </p>
+				                </div>
+				            </td>
+				        </tr> 
+                        <tr>
+                            <td style="padding-left: 50px;" nowrap="nowrap">Download Pattern:</td>
+                            <td colspan="2">
+                                <fieldset>
+                                    <table border="0" cellpadding="1" cellspacing="0">
+                                        <tr>
+                                            <td>
+                                                <input type="text" size="40" id="onedriveDownloadFilePattern" name="onedriveDownloadFilePattern" value=""/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>       
+  
+        <tr>
+            <td colspan="3"><b>User Settings:</b></td>
+        </tr>
+        <tr>
+            <td style="padding-left: 50px;" nowrap="nowrap">User email*:</td>
+            <td>
+                <fieldset>
+                    <table border="0" cellpadding="1" cellspacing="0">
+                        <tr>
+                            <td>
+                                <input type="text" size="40" id="onedrive_userEmail" name="onedrive_userEmail" value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
