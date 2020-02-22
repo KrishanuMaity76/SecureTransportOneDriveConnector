@@ -1,0 +1,57 @@
+apply plugin: 'java'
+apply plugin: 'distribution'
+
+
+defaultTasks 'clean', 'distZip'
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    jcenter()
+}
+
+dependencies {
+    // The Pluggable Transfer Site SPI -
+    //compile('com.microsoft.graph:microsoft-graph:1.2.+')
+    //compile('com.microsoft.graph:microsoft-graph-core:1.0.1')
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.2.0'
+    compile 'org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.2'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+	compile 'org.apache.httpcomponents:httpclient:4.5.10'
+	compileOnly name: 'plugin-site-spi'
+	// Libraries provided @runtime by ST
+	compileOnly name: 'securetransport-shared-java-core-15.0.0'
+    compileOnly name: 'oro-2.0.8'
+    compileOnly name: 'securetransport-program-server-core-5.4-P22'
+	compileOnly name: 'bcprov-ext-jdk15on-162'
+
+    compileOnly 'javax.validation:validation-api:1.0.0.GA'
+    compileOnly 'javax.inject:javax.inject:1'
+    
+    //JSCH library - This will be included in the lib path of the plugin install
+    	compile name: 'gson-2.2.2'
+        compile name: 'jsch-0.1.55'
+        compile name: 'commons-net-3.6'
+	
+        
+}
+
+jar {
+
+}
+
+distributions {
+    main {
+        contents {
+            into('/') {
+                from jar
+            }
+
+            // Adding all external libraries to the archive
+            into('libs') {
+                from configurations.runtime
+            }
+        }
+    }
+}
