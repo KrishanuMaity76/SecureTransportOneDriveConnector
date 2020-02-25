@@ -243,7 +243,7 @@ public class OneDriveSite extends CustomSite {
 	
 	/**
 	 * 
-	 * This method is a private method called from the public method of this class. This method returns onedrive user is based on the user id.
+	 * This method is a private method called from the public method of this class. This method returns user's onedrive id based on the user id.
      * @param This method takes access token and the user id.
      * @return It returns onedrive id.
 	 * 
